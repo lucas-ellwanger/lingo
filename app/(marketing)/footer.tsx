@@ -14,7 +14,7 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          Brazilian
+          <span className="mt-0.5">Brazilian</span>
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image
@@ -24,7 +24,7 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          French
+          <span className="mt-0.5">French</span>
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image
@@ -34,7 +34,7 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          Japanese
+          <span className="mt-0.5">Japanese</span>
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image
@@ -44,7 +44,7 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          Mandarin
+          <span className="mt-0.5">Mandarin</span>
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image
@@ -54,7 +54,7 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          Spanish
+          <span className="mt-0.5">Spanish</span>
         </Button>
       </div>
     </footer>

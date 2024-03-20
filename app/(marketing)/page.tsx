@@ -34,7 +34,7 @@ export default function Home() {
                 afterSignUpUrl="/learn"
               >
                 <Button size="lg" variant="secondary" className="w-full">
-                  Get Started
+                  <span className="mt-0.5">Get Started</span>
                 </Button>
               </SignUpButton>
               <SignInButton
@@ -49,7 +49,9 @@ export default function Home() {
             </SignedOut>
             <SignedIn>
               <Button size="lg" variant="secondary" className="w-full" asChild>
-                <Link href="/learn">Continue Learning</Link>
+                <Link href="/learn">
+                  <span className="mt-0.5">Continue Learning</span>
+                </Link>
               </Button>
             </SignedIn>
           </ClerkLoaded>
