@@ -1,15 +1,35 @@
 "use client";
 
-import type { Course } from "@/db/schema";
+import { useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { upsertUserProgress } from "@/actions/user-progress";
+import { toast } from "sonner";
+
+import type { Course, UserProgress } from "@/db/schema";
 
 import { Card } from "./card";
 
 interface Props {
   courses: Course[];
-  activeCourseId: number;
+  activeCourseId?: UserProgress["activeCourseId"];
 }
 
 export const List = ({ courses, activeCourseId }: Props) => {
+  const router = useRouter();
+  const [pending, startTransition] = useTransition();
+
+  const onClick = (id: number) => {
+    if (pending) return;
+
+    if (id === activeCourseId) {
+      return router.push("/learn");
+    }
+
+    startTransition(() => {
+      upsertUserProgress(id).catch(() => toast.error("Something went wrong"));
+    });
+  };
+
   return (
     <div className="grid grid-cols-2 gap-4 pt-6 lg:grid-cols-[repeat(auto-fill,minmax(210px,1fr))]">
       {courses.map((course) => (
@@ -18,8 +38,8 @@ export const List = ({ courses, activeCourseId }: Props) => {
           id={course.id}
           title={course.title}
           imageSrc={course.imageSrc}
-          onClick={() => {}}
-          disabled={false}
+          onClick={onClick}
+          disabled={pending}
           active={course.id === activeCourseId}
         />
       ))}
