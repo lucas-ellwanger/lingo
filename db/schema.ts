@@ -5,3 +5,5 @@ export const courses = sqliteTable("courses", {
   title: text("title").notNull(),
   imageSrc: text("image_src").notNull(),
 });
+
+export type Course = typeof courses.$inferSelect;
