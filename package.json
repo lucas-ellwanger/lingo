@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "db:studio": "bunx drizzle-kit studio",
-    "db:push": "bunx drizzle-kit push:sqlite"
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:seed": "bun run scripts/seed.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",

@@ -3,9 +3,10 @@ import Link from "next/link";
 import { InfinityIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import type { Course } from "@/db/schema";
 
 interface Props {
-  activeCourse: { title: string; imageSrc: string }; // TODO: Replace with DB types
+  activeCourse: Course;
   hearts: number;
   points: number;
   hasActiveSubscription: boolean;
