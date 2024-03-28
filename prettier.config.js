@@ -11,7 +11,7 @@ module.exports = {
     "^@/hooks/(.*)$",
     "^@/components/ui/(.*)$",
     "^@/components/(.*)$",
-    "^@/app/(.*)$",
+    "^@/store/(.*)$",
     "^@/db/(.*)$",
     "",
     "^[./]",
