@@ -8,7 +8,7 @@ interface Props {
   onCheck: () => void;
   status: "correct" | "wrong" | "none" | "completed";
   disabled?: boolean;
-  lessonId?: boolean;
+  lessonId?: number;
 }
 
 export const Footer = ({ onCheck, status, disabled, lessonId }: Props) => {
